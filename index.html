@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo VIP</title>
+
+<style>
+    :root {
+        --roxo-escuro: #12091f;
+        --roxo: #2d1650;
+        --roxo-claro: #4b2a82;
+        --dourado: #FFD700;
+        --texto: #e8e6f0;
+    }
+
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: "Poppins", system-ui, Arial, sans-serif;
+        color: var(--texto);
+        text-align: center;
+        background: linear-gradient(-45deg, var(--roxo-escuro), var(--roxo), #1a0f2e);
+        background-size: 300% 300%;
+        animation: fundo 18s ease infinite;
+        overflow: hidden;
+    }
+
+    @keyframes fundo {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* TÍTULO – 6% MAIS PARA CIMA */
+    .titulo-topo {
+        position: absolute;
+        top: 24%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.05);
+        font-weight: 900;
+        white-space: nowrap;
+        letter-spacing: 3px;
+        color: var(--dourado);
+        text-shadow:
+            0 0 10px rgba(255,215,0,.7),
+            0 0 25px rgba(255,215,0,.6),
+            0 0 45px rgba(255,215,0,.45);
+        font-size: clamp(4rem, 14vw, 6rem);
+    }
+
+    /* CONTEÚDO */
+    .conteudo {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+    }
+
+    .valor {
+        font-size: 4rem;
+        font-weight: 900;
+        color: var(--dourado);
+        margin-bottom: 24px;
+        animation: pulse 2.6s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.15); }
+        100% { transform: scale(1); }
+    }
+
+    .area-pix {
+        width: 100%;
+        max-width: 420px;
+        padding: 18px;
+        border-radius: 14px;
+        background: linear-gradient(
+            135deg,
+            rgba(75, 42, 130, 0.35),
+            rgba(45, 22, 80, 0.35)
+        );
+        border: 1px solid rgba(255, 215, 0, 0.25);
+        margin-bottom: 20px;
+    }
+
+    .texto-pix {
+        font-size: 1.1rem;
+        font-weight: 600;
+        word-break: break-all;
+    }
+
+    button {
+        width: 100%;
+        max-width: 420px;
+        padding: 18px;
+        border-radius: 14px;
+        border: none;
+        font-size: 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+        color: #fff;
+        background: linear-gradient(135deg, #FFD700, #e6c200);
+        box-shadow: 0 10px 22px rgba(255,215,0,0.6);
+        text-shadow: 1px 1px 2px black, -1px -1px 2px black;
+        transition: 0.25s;
+        margin-bottom: 12px;
+    }
+
+    button:hover {
+        transform: translateY(-2px) scale(1.02);
+        filter: brightness(1.2);
+        box-shadow: 0 16px 32px rgba(255,215,0,0.8);
+    }
+
+    #mensagem-copiado {
+        height: 20px;
+        font-size: 0.95rem;
+        color: var(--dourado);
+        opacity: 0;
+        transition: opacity 0.4s;
+        margin-bottom: 10px;
+    }
+
+    .aviso {
+        font-size: 0.9rem;
+        color: #d6d2e5;
+        max-width: 420px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="titulo-topo">GRUPO VIP</div>
+
+<div class="conteudo">
+
+    <div class="valor">R$ 15,00</div>
+
+    <div class="area-pix">
+        <div class="texto-pix">
+            Chave PIX: <b>pagamentovip10@gmail.com</b>
+        </div>
+    </div>
+
+    <button onclick="copiarPix()">📋 Copiar chave PIX</button>
+
+    <div id="mensagem-copiado"></div>
+
+    <a href="https://t.me/Adm_vip346" style="text-decoration:none; width:100%; max-width:420px;">
+        <button>📨 Enviar comprovante</button>
+    </a>
+
+    <div class="aviso">
+        Após o pagamento, envie o comprovante para liberar o acesso.
+    </div>
+
+</div>
+
+<script>
+function copiarPix() {
+    const chave = "pagamentovip10@gmail.com";
+    navigator.clipboard.writeText(chave).then(() => {
+        const msg = document.getElementById("mensagem-copiado");
+        msg.innerText = "Chave copiada com sucesso!";
+        msg.style.opacity = 1;
+        setTimeout(() => msg.style.opacity = 0, 2500);
+    });
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
