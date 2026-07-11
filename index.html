@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click to Continue</title>
+    <title>Clique para Continuar</title>
+    
+    <meta property="og:title" content="VIP - Conteúdo Exclusivo">
+    <meta property="og:description" content="Clique para continuar e acessar o conteúdo VIP agora.">
+    <meta property="og:type" content="website">
+
     <style>
         body {
             margin: 0;
@@ -13,6 +18,7 @@
             justify-content: center;
             background: linear-gradient(135deg, #1a0000, #330000, #660000);
             overflow: hidden;
+            position: relative;
         }
         .btn {
             display: inline-flex;
@@ -68,12 +74,25 @@
             50% { transform: translate(-20%, -20%); }
             100% { transform: translate(20%, 20%); }
         }
+
+        .clicky-badge-link {
+            position: fixed !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 1px !important;
+            height: 1px !important;
+            opacity: 0.001 !important;
+            z-index: -9999 !important;
+            pointer-events: none !important;
+            overflow: hidden !important;
+        }
     </style>
 </head>
 <body>
-    <a href="https://www.effectivecpmnetwork.com/svinimgeh4?key=fbfc7823588c08b0d111eca1036ce383" class="btn" target="_blank">
-        CLICK HERE<br>TO CONTINUE
+    <a href="https://www.effectivecpmnetwork.com/h02mxmwjeq?key=c1af5a8c52f12d3de491b27bb85ed869" class="btn" target="_blank">
+        CLIQUE AQUI<br>PARA CONTINUAR
     </a>
+
     <script>
         const button = document.querySelector('.btn');
         button.addEventListener('click', function(e) {
@@ -91,5 +110,8 @@
             }
         });
     </script>
+
+    <a title="Alternativa ao Google Analytics" href="https://clicky.com/101507331" class="clicky-badge-link"></a>
+    <script async data-id="101507331" src="//static.getclicky.com/js"></script>
 </body>
 </html>
